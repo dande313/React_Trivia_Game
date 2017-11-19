@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addQuestion } from '../actions';
+import { addQuestion } from '../redux/actions/questions';
 
 class QuestionsNew extends Component {
   constructor(props) {

@@ -26,3 +26,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.High-score-table {
+  border-collapse: collapse;
+  width: 200px;
+  padding-left: 50px;
+}
+.High-score-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.High-score-table th {
+  text-align: left;
+}

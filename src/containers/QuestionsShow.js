@@ -7,8 +7,8 @@ const QuestionsShow = ({ question }) =>
     <p>{question.info}</p>
     <p>{question.answer}</p>
     <input 
-        onChange={analyzeAnswer.bind(this)}
-    	value={this.state.myAnswer}/>
+        onChange={console.log("yay!")}
+    	/>
   </div>;
 
 const analyzeAnswer = (text) => {
@@ -23,7 +23,9 @@ const analyzeAnswer = (text) => {
             alert("please enter numbers only");
         }
     }
-    this.setState({ myNumber: newText });
+    console.log(this)
+    this.setState({ answer: newText });
+
 }
 
 const mapStateToProps = (state, ownProps) => {
