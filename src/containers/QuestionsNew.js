@@ -44,6 +44,7 @@ class QuestionsNew extends Component {
             <option value="Medium">Medium</option>
             <option value="Hard">Hard</option>
           </select> 
+          <button>Submit</button>
         </form>
         <br/>
         <p> Instructions: </p>

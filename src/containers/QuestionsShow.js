@@ -33,11 +33,12 @@ class QuestionShow extends Component {
 
     let input = parseFloat(e.target.value) || "";
     console.log(input);
-    if (input < this.props.question.answer && this.state.currentCount != 0){
+    console.log(this.props.question.answer);
+    if (input < this.props.question.answer && this.state.currentCount !== 0){
       this.setState({response: "Too Low"})
     } else if (input > this.props.question.answer){
       this.setState({response: "Too High"})
-    } else if (input = this.props.question.answer){
+    } else if (input === this.props.question.answer){
       this.setState({response: "Perfect", currentCount: 0})
     }
 
@@ -54,9 +55,6 @@ class QuestionShow extends Component {
     }
   }
 
-  scoring(e){
-
-  }
 
 
   render(){

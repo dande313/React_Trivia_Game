@@ -10,7 +10,7 @@ class HighScoresPage extends Component {
   }
 
   render() {
-    const { match, high_scores } = this.props;
+    const { high_scores } = this.props;
 
     return (
       <div>
