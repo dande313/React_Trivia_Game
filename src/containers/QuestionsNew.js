@@ -41,8 +41,8 @@ class QuestionsNew extends Component {
           <label>Difficuly</label><br/>
           <select name="difficulty">
             <option value="Easy">Easy</option>
-            <option value="saab">Intermediate</option>
-            <option value="fiat">Hard</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
           </select> 
         </form>
         <br/>
