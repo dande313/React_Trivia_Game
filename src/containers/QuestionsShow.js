@@ -1,32 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-const QuestionsShow = ({ question }) =>
-  <div className="col-md-8">
-  	<h4>{question.difficulty}</h4>
-    <p>{question.info}</p>
-    <p>{question.answer}</p>
-    <input 
-        onChange={console.log("yay!")}
-    	/>
-  </div>;
 
-const analyzeAnswer = (text) => {
-    let newText = '';
-    let numbers = '0123456789';
+class QuestionShow extends Component {
+    constructor(props) {
+        super(props);
+        this.testing=this.testing.bind(this);
+  }
 
-    for (var i=0; i < text.length; i++) {
-        if(numbers.indexOf(text[i]) > -1 ) {
-            newText = newText + text[i];
-        }
-        else {
-            alert("please enter numbers only");
-        }
+  testing(e){
+    let input = parseFloat(e.target.value) || "";
+    console.log(input);
+    if (input < this.props.question.answer){
+      console.log ("too low")
+    } else if (input > this.props.question.answer){
+      console.log ("too high")
+    } else if (input = this.props.question.answer){
+      console.log ("Perfect")
     }
-    console.log(this)
-    this.setState({ answer: newText });
 
+  }
+
+
+  render(){
+    return(
+     <div className="col-md-8">
+        <h4>{this.props.question.difficulty}</h4>
+        <p>{this.props.question.info}</p>
+        <p>{this.props.question.answer}</p>
+        <input 
+            onChange={(e) => this.testing(e)}
+          />
+        <p>{this.props.response}</p>
+      </div>
+    )
+  }
 }
+
 
 const mapStateToProps = (state, ownProps) => {
   let question = state.questions.find(question => question.id === +ownProps.match.params.questionId);
@@ -37,4 +47,4 @@ const mapStateToProps = (state, ownProps) => {
 
 
 
-export default connect(mapStateToProps)(QuestionsShow);
+export default connect(mapStateToProps)(QuestionShow);
